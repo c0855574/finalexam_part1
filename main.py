@@ -5,6 +5,7 @@ import sys
 import gym
 import urllib.request
 import time
+import psutil
 
 
 # hyperparameters
@@ -137,6 +138,7 @@ while True:
       print("Total hours: ", HoursGet)
       print("Total minutes: ", MinutesGet)
       print("Total second: ", SecondsGet)
+      print("RAM memory used(%)",psutil.virtual_memory()[2])
       sys.exit(('Crash for number of neurons: %d' % (H)))
 
 
