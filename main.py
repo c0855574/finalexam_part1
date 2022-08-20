@@ -5,12 +5,13 @@ import sys
 import gym
 import urllib.request
 import time
+import psutil
 
 
 # hyperparameters
 H = 200 # number of hidden layer neurons
 batch_size = 10 # every how many episodes to do a param update?
-learning_rate = 1e-4
+learning_rate = 1e-3
 gamma = 0.99 # discount factor for reward
 decay_rate = 0.99 # decay factor for RMSProp leaky sum of grad^2
 resume = False # resume from previous checkpoint?
@@ -137,6 +138,7 @@ while True:
       print("Total hours: ", HoursGet)
       print("Total minutes: ", MinutesGet)
       print("Total second: ", SecondsGet)
+      print("RAM memory used(%)",psutil.virtual_memory()[2])
       sys.exit(('Crash for number of neurons: %d' % (H)))
 
 
